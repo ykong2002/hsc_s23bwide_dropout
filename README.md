@@ -5,8 +5,8 @@
 The dropout candidates are stored in `.csv` files named using the format:  
 `{survey_name}_{dropout}_drop_candidates.csv`
 
-- **Valid inputs for `{survey_name}`**: `'first'`, `'lotss'`, `'vlass'`  
-- **Valid inputs for `{dropout}`**: `'g'`, `'r'`, `'i'`, `'z'`
+- **`{survey_name}`**: `'first'`, `'lotss'`, `'vlass'`  
+- **`{dropout}`**: `'g'`, `'r'`, `'i'`, `'z'`
 
 The cutout files are named based on the `tract` column in the data table, which corresponds to the HSC sky region. Since a single tract covers ~1.5 degrees, multiple candidates often fall within the same tract. To distinguish them, the following naming scheme is used:
 
