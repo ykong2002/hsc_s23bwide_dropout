@@ -17,4 +17,6 @@ for index, row in data.iterrows():
     tract_counter[tract_base] += 1
     tract = tract_base if count == 0 else f"{tract_base}_{count}"
 
+```
+
 The jupyter notebook can be used blindly by just giving the survey name and the dropout input for fetching the available raw cutout fits files or processed images with the optical and radio centres labelled.
