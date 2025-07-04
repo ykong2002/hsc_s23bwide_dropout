@@ -1,12 +1,14 @@
 # hsc_s23bwide_dropout
-## Jupyter Notebook For Data Fetching
-The dropout candidates are stored within the .csv files with the naming scheme `{survey_name}_{dropout}_drop_candidates.csv`.
 
-The available inputs for `{survey_name}` are: 'first', 'lotss', and 'vlass'.
+## Explanation of the Files in the Google Drive
 
-The available inputs for `{dropout}` are: 'g', 'r', 'i', 'z'.
+The dropout candidates are stored in `.csv` files named using the format:  
+`{survey_name}_{dropout}_drop_candidates.csv`
 
-The cutout files in the Google Drive are named by the 'tract' column in the data table, where 'tract' corresponds to its HSC position. However, it is quite common having multiple candidates within the same 'tract' as a single tract is ~1.5deg wide. For simplicity, I perform the following naming scheme just for simple distinguishment:
+- **Valid inputs for `{survey_name}`**: `'first'`, `'lotss'`, `'vlass'`  
+- **Valid inputs for `{dropout}`**: `'g'`, `'r'`, `'i'`, `'z'`
+
+The cutout files are named based on the `tract` column in the data table, which corresponds to the HSC sky region. Since a single tract covers ~1.5 degrees, multiple candidates often fall within the same tract. To distinguish them, the following naming scheme is used:
 
 ```python
 tract_counter = defaultdict(int)
@@ -16,7 +18,24 @@ for index, row in data.iterrows():
     count = tract_counter[tract_base]
     tract_counter[tract_base] += 1
     tract = tract_base if count == 0 else f"{tract_base}_{count}"
-
 ```
 
-The jupyter notebook can be used blindly by just giving the survey name and the dropout input for fetching the available raw cutout fits files or processed images with the optical and radio centres labelled.
+### Available Cutouts
+
+1. **HSC S23B Optical Cutouts**  
+   - Sizes: 4″×4″, 8″×8″, and 12″×12″  
+   - Centered on the **optical counterpart**, with the **radio source** labeled  
+   - All filters are scaled consistently with optimized contrast for inspecting bright pixels  
+   - The 8″ and 12″ cutouts also show the cross-match region  
+   - Crossmatch radii:
+     - HSC-FIRST: 1.0″  
+     - HSC-VLASS: 1.5″  
+     - HSC-LoTSS: 2.0″  
+
+2. **LoTSS Radio Cutouts**  
+   - Size: 1 arcmin  
+   - Centered on the **radio source** for all HSC-LoTSS dropout candidates  
+   - Annotated with:
+     - Radio center  
+     - Matched optical counterpart  
+     - Crossmatch region  
