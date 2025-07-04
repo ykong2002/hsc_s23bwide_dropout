@@ -24,7 +24,7 @@ for index, row in data.iterrows():
 
 1. **HSC S23B Optical Cutouts**  
    - Sizes: 4″×4″, 8″×8″, and 12″×12″  
-   - Centered on the **optical counterpart**, with the **radio source** labeled  
+   - Centred on the **optical counterpart**, with the **radio source** labeled  
    - All filters are scaled consistently with optimized contrast for inspecting bright pixels  
    - The 8″ and 12″ cutouts also show the cross-match region  
    - Crossmatch radii:
@@ -36,6 +36,10 @@ for index, row in data.iterrows():
    - Size: 1 arcmin  
    - Centered on the **radio source** for all HSC-LoTSS dropout candidates  
    - Annotated with:
-     - Radio center  
+     - Radio centre  
      - Matched optical counterpart  
      - Crossmatch region  
+
+
+## SQL generating scripts
+Applying the flags adapted from Harikane+22 on the server-side crossmatch results between S23B wide and clean radio sources.
