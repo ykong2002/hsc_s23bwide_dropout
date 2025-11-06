@@ -8,6 +8,9 @@ The dropout candidates are stored in `.csv` files named using the format:
 - **`{dropout}`**: `'g'`, `'r'`, `'i'`, `'z'`
 
 Using the fetch_all.py helper, one can obtain the raw '.fits' cutouts from HSC S23B Wide, LoTSS DR2, and the latest VLASS Epoch.
+example input
+run fetch_all.py --survey {survey_name} --dropout {dropout}
+optional for getting the cutouts: --fetch-lotss --fetch-vlass --run-download
 
 The cutout files are named based on the `tract` column in the data table, which corresponds to the HSC sky region. Since a single tract covers ~1.5 degrees, multiple candidates often fall within the same tract. To distinguish them, the following naming scheme is used:
 
@@ -34,13 +37,14 @@ for index, row in data.iterrows():
      - HSC-LoTSS: 2.0″  
 
 2. **VLASS & FIRST**
-   - Size: 1, 3, 5 arcmin
+   - Sizes[arcmin]: [1, 3, 5]
    - Centred on the **radio source** for all dropout candidates
    - Annotated with:
      - Radio centre  
      - Matched optical counterpart  
      - Crossmatch region
-
+3. **LoTSS DR2**
+   - Matching cutout images for the HSC-VLASS dropout candidates
 
 ## SQL generating scripts
-Applying the flags adapted from Harikane+22 on the server-side crossmatch results between S23B wide and clean radio sources.
+Applying the least selection flags to obtain the inital samples from the server-side crossmatch results between S23B wide and radio source catalogs.
