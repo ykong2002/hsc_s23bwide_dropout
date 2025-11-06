@@ -33,13 +33,13 @@ for index, row in data.iterrows():
      - HSC-VLASS: 1.5″  
      - HSC-LoTSS: 2.0″  
 
-2. **LoTSS Radio Cutouts**  
-   - Size: 1 arcmin  
-   - Centered on the **radio source** for all HSC-LoTSS dropout candidates  
+2. **VLASS & FIRST**
+   - Size: 1, 3, 5 arcmin
+   - Centred on the **radio source** for all dropout candidates
    - Annotated with:
      - Radio centre  
      - Matched optical counterpart  
-     - Crossmatch region  
+     - Crossmatch region
 
 
 ## SQL generating scripts
