@@ -24,7 +24,7 @@ for index, row in data.iterrows():
 ### Available Cutouts
 
 1. **HSC S23B Optical Cutouts**  
-   - Sizes: [4, 8, 16, 24, 60, 180, 300]  
+   - Sizes[arcsec]: [4, 8, 16, 24, 60, 180, 300]  
    - Centred on the **optical counterpart**, with the **radio source** labeled  
    - All filters are scaled consistently with optimized contrast for inspecting bright pixels  
    - The 8″ and 12″ cutouts also show the cross-match region  
