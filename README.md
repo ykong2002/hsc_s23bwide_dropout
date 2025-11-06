@@ -1,12 +1,13 @@
 # hsc_s23bwide_dropout
 
-## Explanation of the Files in the Google Drive
-
+## Explanation of the Helper scripts
 The dropout candidates are stored in `.csv` files named using the format:  
 `{survey_name}_{dropout}_drop_candidates.csv`
 
 - **`{survey_name}`**: `'first'`, `'lotss'`, `'vlass'`  
 - **`{dropout}`**: `'g'`, `'r'`, `'i'`, `'z'`
+
+Using the fetch_all.py helper, one can obtain the raw '.fits' cutouts from HSC S23B Wide, LoTSS DR2, and the latest VLASS Epoch.
 
 The cutout files are named based on the `tract` column in the data table, which corresponds to the HSC sky region. Since a single tract covers ~1.5 degrees, multiple candidates often fall within the same tract. To distinguish them, the following naming scheme is used:
 
@@ -23,7 +24,7 @@ for index, row in data.iterrows():
 ### Available Cutouts
 
 1. **HSC S23B Optical Cutouts**  
-   - Sizes: 4″×4″, 8″×8″, and 12″×12″  
+   - Sizes: [4, 8, 16, 24, 60, 180, 300]  
    - Centred on the **optical counterpart**, with the **radio source** labeled  
    - All filters are scaled consistently with optimized contrast for inspecting bright pixels  
    - The 8″ and 12″ cutouts also show the cross-match region  
